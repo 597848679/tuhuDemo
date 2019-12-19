@@ -1,0 +1,204 @@
+@import "@/style/common.scss";
+//入场动画
+.fade-enter,.fade-appear {
+    transform: translateY(20%)
+}
+.fade-enter-active,.fade-appear-active {
+    transition : all 0.2s linear;
+    transform: translateY(0%);
+} 
+.fade-enter-done {
+    transform: translateY(0%)
+}
+//出场动画
+.fade-exit{
+    transform: translateY(0%)
+}
+.fade-exit-active{
+    transform: translateY(100%);
+    transition: all 0.6s linear;
+}
+.fade-exit-done {
+    transform: translateY(0);
+}
+.arrow{
+    @include wh(rem(40),rem(40));
+}
+.top{
+    display: flex;
+    z-index: 10000;
+    position: fixed;
+    left: 0;
+    @include wh(100%,rem(100));
+    &-item{
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+        @include wh(25%,rem(100));
+        line-height: rem(100);
+        @include style(rem(28),#333);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            display: inline-block;
+            max-width: rem(120);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-right: rem(5);
+        }
+    }
+    &-alert{
+        // background: rgba($color: #000000, $alpha: 0.4);
+        top: rem(100);
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        position: fixed;
+        &-region{
+            @include wh(100%,rem(84*7));
+            overflow-y: scroll;
+            background: #fff;
+            &-item{
+                @include wh(100%,rem(84));
+                line-height: rem(84);
+                padding:0 rem(40);
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &-sort{
+            background: #fff;
+            border-bottom: 1px solid gray;
+            ul{
+                @include wh(100%,100%);
+                li{
+                    @include wh(100%,rem(84));
+                    line-height: rem(84);
+                    padding:0 rem(30);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+        &-shop{
+            background: #fff;
+            border-bottom: 1px solid gray;
+            display: flex;
+            &-left{
+                @include wh(rem(188),rem(88*6));
+                ul{
+                    // @include wh(100%,100%);
+                    background: #efefef;
+                    li{
+                        @include wh(rem(188),rem(88));
+                        line-height: rem(88);
+                        padding:0 rem(30);
+                        @include style(rem(20),#999);
+                        position: relative;
+                        box-sizing: border-box;
+                        vertical-align: middle;
+                        .arrow-right{
+                            position: absolute;
+                            right: rem(16);
+                            top: 50%;
+                            transform: translateY(-50%);
+                            @include wh(rem(32),rem(32));
+                        }
+                    }
+                    li:not(:last-child):before{
+                        position: absolute;
+                        content: "";
+                        background: lightgray;
+                        width: rem(158);
+                        height: rem(1);
+                        display: block;
+                        left: rem(30);
+                        bottom: 0;
+                    }
+                    li.active{
+                        border-left: 3px solid orange;
+                        background: #fff;
+                        color: #df3348;
+                    }
+                    li.active:before{
+                        display: none;
+                    }
+                }
+            }
+            &-right{
+                width: rem(750 - 188);
+                height: rem(88*6);
+                overflow-y: scroll;
+                ul{
+                    li{
+                        padding-left: rem(30);
+                        @include wh(100%,rem(88));
+                        line-height: rem(88);
+                        @include style(rem(25),#aaa);
+                    }
+                }
+            }
+        }
+        &-type{
+            overflow-y: scroll;
+            background: #fff;
+            border-bottom: 1px solid gray;
+            &-head{
+                @include wh(100%,rem(72));
+                line-height: rem(72);
+                padding-left: rem(15);
+                @include style(rem(28),#333);
+            }
+            &-head:before{
+                position: absolute;
+                content: '';
+                background: #ccc;
+                width: rem(750);
+                height: 1px;
+                bottom: 0;
+                left: rem(-15);
+            }
+            &-body{
+                padding: 0 rem(15);
+                ul{
+                    height: rem(540);
+                    li{
+                        float: left;
+                        margin-right: rem(10);
+                        @include wh(rem(230),rem(60));
+                        line-height: rem(60);
+                        border-radius: 4px;
+                        border: 1px solid #888;
+                        text-align: center;
+                        margin-bottom: rem(20);
+                    }
+                }
+            }
+            &-foot{
+                @include wh(100%,rem(120));
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &-btn{
+                    @include wh(rem(686),rem(80));
+                    border-radius: 20px;
+                    border: 1px solid gray;
+                    display: flex;
+                    overflow:hidden;
+                    text-align: center;
+                    line-height: rem(80);
+                    @include style(rem(24),#333);
+                    &-left{
+                        @include wh(50%,rem(80))
+                    }
+                    &-right{
+                        background: #df3448;
+                        @include wh(50%,rem(80));
+                    }
+                }
+            }
+        }
+    }
+}

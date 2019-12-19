@@ -1,0 +1,188 @@
+
+@import '@/style/common.scss';
+.fade-enter,fade-appear {
+    opacity: 0;
+}
+.fade-enter-active,fade-appear-active {
+    opacity: 0.5;
+    transition: opacity 1s ease-in;
+} 
+.fade-enter-done {
+    opacity: 1;
+}
+//出场动画
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0.5;
+    transition: opacity 1s ease-in;
+}
+.fade-exit-done {
+    opacity: 0;
+}
+.slick-dots{
+    li{
+        border-radius: 50%;
+    }
+}
+.content{
+    &-header{
+        &-top{
+            @include wh(100%,rem(130));
+            img{
+                @include wh(100%,100%);
+            }
+        }
+        &-wrap{
+            @include wh(rem(750),rem(92));
+            display: flex;
+            align-items: center;
+            &-city{
+                @include wh(rem(150),rem(92));
+                padding-left: rem(30);
+                line-height: rem(92);
+                display: flex;
+                align-items: center;
+                span{
+                    padding-right: rem(15);
+                    display: inline-block;
+                    width: rem(85);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                div{
+                    @include wh(rem(40),rem(40));
+                    display: flex;
+                    align-items: center;
+                    .arrow{
+                        @include wh(rem(40),rem(40));
+                    }
+                }
+            }
+            &-search{
+                padding-left: rem(60);
+                margin-left: rem(20);
+                @include wh(rem(540),rem(60));
+                line-height: rem(60);
+                overflow: hidden;
+                background: #eee;
+                border-radius: 0.65rem;
+                position: relative;
+                &-btn{
+                    position: absolute;
+                    left: rem(6);
+                    top: rem(10);
+                    @include wh(rem(52),rem(52));
+                    font-size: 16px;
+                }
+            }
+            &-kf{
+                @include wh(rem(90),rem(92));
+                text-align: center;
+                line-height: rem(92);
+                img{
+                    width: rem(45);
+                    height: rem(45);
+                }
+            }
+        }
+    }
+    &-alert{
+        @include wh(100%,100%);
+        background: pink;
+    }
+    &-main{
+        &-hascar{
+            @include wh(100%,rem(100));
+            padding: 0 rem(50);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &-brand{
+                display: flex;
+                align-items: center;
+                &-logo{
+                    @include wh(rem(56),rem(56));
+                    margin-right: rem(15);
+                    img{
+                        @include wh(100%,100%);
+                    }
+                }
+            }
+        }
+        &-lessbussiness{
+            @include wh(100%,rem(120));
+            ul{
+                @include wh(100%,rem(120));
+                display: flex;
+                padding:0 rem(40);
+                li{
+                    padding-top: rem(20);
+                    @include wh(calc(100% / 6),100%);
+                    text-align: center;
+                    img{
+                        @include wh(rem(48),rem(48));
+                        display: inline-block;
+                        margin-bottom: rem(8);
+                    }
+                    span{
+                        display: block;
+                        font-size: rem(24);
+                    }
+                }
+            }
+        }
+        &-mainbussiness{
+            @include wh(100%,rem(180));
+            ul{
+                @include wh(100%,rem(180));
+                display: flex;
+                li{
+                    padding-top: rem(20);
+                    @include wh(25%,100%);
+                    text-align: center;
+                    img{
+                        @include wh(rem(64),rem(64));
+                        display: inline-block;
+                        margin-bottom: rem(4);
+                    }
+                    span{
+                        display: block;
+                    }
+                    span:nth-of-type(1){
+                        font-size: rem(28);
+                    }
+                    span:nth-of-type(2){
+                        font-size: rem(24);
+                        color: lightgray;
+                    }
+                }
+            }
+        }
+        &-banner{
+            // @include wh(100%,rem(250));
+            &-item{
+                @include wh(100%,rem(250));
+                img{
+                    @include wh(100%,100%);
+                }
+            }
+        }
+        &-userful{
+            @include wh(rem(750),rem(320));
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                li{
+                    @include wh(20%,rem(160));
+                }
+                img{
+                    @include wh(100%,100%);
+                }
+            }
+        }
+    }
+}

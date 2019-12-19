@@ -1,0 +1,94 @@
+@import "@/style/common.scss";
+//入场动画
+.fade-enter,.fade-appear {
+    transform: translateX(100%)
+}
+.fade-enter-active,.fade-appear-active {
+    transition : all 0.4s linear;
+    transform: translateX(0%);
+} 
+.fade-enter-done {
+    transform: translateX(0%)
+}
+//出场动画
+.fade-exit{
+    transform: translateX(0%)
+}
+.fade-exit-active{
+    transform: translateX(100%);
+    transition: all 0.4s linear;
+}
+.fade-exit-done {
+    transform: translateX(0);
+}
+.alert{
+    overflow: scroll;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    @include wh(100%,100%);
+    background: #fff;
+    z-index: 9998;
+    &-box{
+        @include wh(100%,auto);
+        &-title{
+            @include wh(100%,rem(56));
+            padding: rem(10);
+            background: #eee;
+        }
+        
+        &-hotitems{
+            @include wh(rem(700),rem(180));
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            &-item{
+                @include wh(rem(165),rem(60));
+                margin-left: rem(10);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid gray;
+                border-radius: 8px;
+            }
+            &-item:nth-of-type(1),&-item:nth-of-type(5){
+                margin-left: rem(8);
+            }
+        }
+        &-content{
+            &-item{
+                position: relative;
+                @include wh(100%,rem(90));
+                padding-left: rem(30);
+                span{
+                    line-height: rem(90);
+                    display: inline-block;
+                }
+            }
+            &-item::before{
+                content: '';
+                display: block;
+                position: absolute;
+                background: #eee;
+                @include wh(rem(720),1px);
+                bottom: 0;
+                left: rem(30);
+            }
+        }
+    }
+    
+}
+.right{
+    
+    z-index: 9999;
+    position: fixed;
+    right: rem(16);
+    top: rem(50);
+    display: flex;
+    flex-direction: column;
+    &-item{
+        margin:rem(5);
+    }
+}

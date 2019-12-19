@@ -1,0 +1,148 @@
+/*
+ 颜色值的配置-------------------------------------------------
+*/
+$blue: #1b88fd;
+$blueLight:#0dafe6;
+$red:#fe374c;
+$yellow:#fdab1d;
+$yellowLight:#ffc869;
+$yellowDeep:#ff8e00;
+$gray:#e0e0e0;
+$grayLight:#f3f3f3;
+$grayDeep:#cccccc;
+
+$bg:#f5f5f5;  //背景颜色
+$ff:#fff;
+$six:#666666;
+$three:#333333;
+$nine:#999999;
+$btnBlue:#6CB3FF;
+/*
+ 变量值的配置------------------------------------------------
+*/
+$count:75;      //表示的是按照750的图子来计算
+$s30:0.4rem;    //对应rem(30)
+$paddingTop:1.3rem;
+$headerTop:1.2rem;
+/*
+函数配置-------------------------------------------------------
+*/
+@mixin flexContainer($jc){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $jc;
+} 
+@mixin flexItem($n) {
+  box-sizing: border-box;
+  flex-grow: $n;
+}
+@function rem($rem){ 
+  @return $rem/$count+rem;
+}
+@mixin style($size,$color){  
+  font-size:$size;
+  color: $color;
+}
+@mixin wh($w,$h){
+  width: $w;
+  height: $h;
+}
+@mixin center(){
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%)
+}
+@mixin textOverflow($n){
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  /* autoprefixer: off */  //针对打包不显示的问题
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp:$n; 
+}
+@mixin cicle($size:8px){ 
+  border-radius:$size;
+}
+@mixin lh($h){
+  line-height:$h;
+}
+@mixin fixed($t,$l){
+  position: fixed;
+  top: $t;
+  left:$l;
+}
+@mixin textAlign($h){
+ height:$h;
+ line-height: $h;
+ text-align: center;
+ vertical-align: middle;
+}
+@mixin typeIcon($url){
+  display: block;
+  @include wh(rem(26),rem(26));
+  background-image: url($url);
+  background-size: cover;
+}
+@mixin getImgWh($w,$h){
+  vertical-align: middle;
+  width: $w;
+  height: $h;
+}
+
+@mixin hasBorder($l,$w){
+  &::before{
+    content:'';
+    display: block;
+    position: absolute;
+    background:rgb(238,238,238);
+    @include wh($w,1px);
+    left: $l;
+    bottom: 0;
+  }
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td,a ,div,img{ margin:0; padding:0;
+    box-sizing: border-box;
+    /* 这是只有在移动端才会有用 */
+     -webkit-tap-highlight-color:transparent;
+  }
+  body, button, input, select, textarea {
+    font-family:  "Helvetica Neue", Helvetica, Arial,PingFangSC-Regular, sans-serif,tahoma, arial, \5b8b\4f53; 
+    font-family:  "Helvetica Neue", Helvetica, Arial,PingFangSC-Regular, sans-serif;
+    -webkit-font-smoothing: PingFangSC-Regular;
+    -moz-osx-font-smoothing: PingFangSC-Regular;
+    background: #fff;
+  }
+  h1, h2, h3, h4, h5, h6{ font-size:100%;}
+  address, cite, dfn, em, var { font-style:normal; }
+  code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+  small{ font-size:12px; }
+  ul, ol,li{ list-style:none; }
+  a{ text-decoration:none;color:#999;}
+  a:hover { text-decoration:none;}
+  sup { vertical-align:text-top; }
+  sub{ vertical-align:text-bottom; }
+  legend { color:#000; }
+  fieldset, img{ border:0;}
+  button,select, textarea{ font-size:100%;outline:none;border:0;background: transparent}
+  table ,textarea{ border-collapse:collapse; border-spacing:0;resize: none;}
+  input,textarea{border:none;outline:none;resize: none;background: transparent;}
+  .clearfix{*zoom:1;}
+  .clearfix::after{content:"\200B";display:block;height:0;clear:both; }
+  .fl{float:left}
+  .fr{float:right}
+  .btn-bg{background: -webkit-linear-gradient(left, #0dafe6, #1b88fd);}
+  .mint-cell-wrapper{
+   background-image: none!important;
+  }
+  .mint-cell:last-child{
+   background-image: none!important;
+  }
+  .mint-cell-value>input{
+    width: 4rem!important;
+  }
+  .weui-cell{
+    padding: 0 !important;
+  }

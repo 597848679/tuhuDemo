@@ -1,0 +1,21 @@
+@import "@/style/common.scss";
+.shopList{
+    padding-bottom: rem(100);
+    &-content{
+        padding-left: rem(30);
+        padding-top: rem(100);
+        min-height: rem(500);
+    }
+    &-header{
+        @include wh(100%,rem(100));
+    }
+}
+.ant-spin-spinning{
+    position: absolute !important;
+    left: 50%;
+    top: 35%;
+    height:rem(750) !important;
+}
+.ant-spin-dot-item{
+    background: linear-gradient(#f84a4b,#e91d38) !important;
+}

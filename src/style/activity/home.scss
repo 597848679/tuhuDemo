@@ -1,0 +1,72 @@
+@import "@/style/common.scss";
+.home{
+    background-color: rgb(159, 4, 227);
+    &-head,&-foot{
+        img{
+            width: rem(750);
+        }
+    }
+    &-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-winner{
+            @include wh(rem(690),rem(104));
+            background-size: cover;
+            position: relative;
+            &-bg{
+                position: absolute;
+                @include wh(rem(270*2),rem(58));
+                right: rem(30);
+                top: rem(23);
+                background-size: cover;
+                li{
+                    @include wh(100%,100%);
+                    width: 100%;
+                    height: rem(58) !important;
+                    line-height: rem(58);
+                    .content{
+                        padding-left: rem(80);
+                        @include style(rem(28),#fff);
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: inline-block;
+                        width: 100%;
+                        span:nth-of-type(3){
+                            color: #ffec00;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        &-main{
+            ul{
+                width: rem(690);
+                height: rem(495);
+                display: flex;
+                justify-content: space-between;
+                align-content: space-between;
+                flex-wrap: wrap;
+                li{
+                    @include wh(rem(155),rem(155));
+                    img{
+                        @include wh(100%,100%);
+                    }
+                }
+                li.btn{
+                    @include wh(rem(330),rem(155));
+                    background-size: cover;
+                    text-align: center;
+                    .star{
+                        @include style(rem(46),#fff);
+                        // font-weight: bold;
+                        display: inline-block;
+                        margin-top: rem(30);
+                    }
+                }
+            }
+        }
+    }
+}

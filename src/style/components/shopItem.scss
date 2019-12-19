@@ -1,0 +1,103 @@
+@import "@/style/common.scss";
+.shop{
+    width: 100%;
+    display: flex;
+    padding: rem(32) 0;
+    border-bottom: 1px solid #eee;
+    &-left{
+        @include wh(rem(140),rem(140));
+        img{
+            @include wh(rem(140),rem(140));
+        }
+    }
+    &-right{
+        width: rem(580);
+        padding-left: rem(20);
+        &-name{
+            padding-right: rem(20);
+            @include style(rem(36),#000);
+        }
+        &-info{
+            margin-right: rem(20);
+            display: flex;
+            align-items: center;
+            position: relative;
+            &-rate{
+                position: relative;
+                margin-right: rem(20);
+            }
+            &-rate:before{
+                display: block;
+                position: absolute;
+                top: 10%;
+                right: rem(-10);
+                @include wh(1px,80%);
+                content:'';
+                background:gray;
+            }
+            &-type{
+                padding :  0 rem(1);
+                @include style(rem(22),#fff);
+                font-weight: bold;
+                border-radius: 4px;
+                position: absolute;
+                right: 0;
+            }
+            &-type.factory{
+                background: linear-gradient(#f84a4b,#e91d38);
+            }
+        }
+        &-address{
+            margin-top: rem(8);
+            padding-right: rem(20);
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            span:nth-of-type(1){
+                display: inline-block;
+                width: clac(100%-rem(140));
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            span:nth-of-type(2){
+                margin-left:rem(60);
+            }
+        }
+        &-honor{
+            margin:rem(2) 0;
+            span{
+                display: inline-block;
+                border: 1px solid lightgray;
+                border-radius: 4px;
+                @include style(rem(10),gray);
+            }
+        }
+        &-free{
+            border-top: 1px solid #eee;
+            padding-top: rem(8);
+            margin-top: rem(12);
+            &-label{
+                div{
+                    // display: flex;
+                    // align-items: center;
+                    span:nth-of-type(1){
+                        padding: 0 rem(3);
+                        display: inline-block;
+                        background: #d1e9ff;
+                        color: #0089ff;
+                        border-radius: 4px;
+                        vertical-align: middle;
+                    }
+                    span:nth-of-type(2){
+                        font-size: rem(10);
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-left: rem(5);
+                    }
+                }
+                
+            }
+        }
+    }
+}
